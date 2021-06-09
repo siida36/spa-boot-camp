@@ -21,3 +21,16 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"post_text": "hoge"}' h
   "result": "hoge!"
 }
 ```
+
+## client の起動手順
+
+- npm package のインストールと開発用サーバ起動
+
+```shell-session
+cd client
+npm install
+
+# webpack-dev-server の起動
+webpack serve --content-base src --mode development
+```
+
