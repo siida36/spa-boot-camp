@@ -7,7 +7,16 @@ CORS(app)  # Cross Origin Resource Sharing
 
 @app.route("/", methods=["GET"])
 def index():
-    return "text parser:)"
+    tmp_message = [
+        {"id": 0, "text": "My first tweet."},
+        {"id": 1, "text": "Good afternoon."},
+    ]
+    return make_response(jsonify(tmp_message))
+
+
+# @app.route("/", methods=["GET"])
+# def index():
+#     return "text parser:)"
 
 
 @app.route("/wakati", methods=["GET", "POST"])
