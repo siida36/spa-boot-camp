@@ -29,27 +29,8 @@ export default class MessageForm extends React.Component {
   }
 
   render() {
-    var states = [
-      { code: "CA", name: "California" },
-      { code: "HI", name: "Hawaii" },
-      { code: "TX", name: "Texas"},
-      { code: "WA", name: "Washington"} ];
-    var options = states.map(
-      (n)=>(
-        <option key={n.code} value={n.code}>
-          {n.name}
-        </option>
-      )
-    );
     return (
       <form onSubmit={this.onSubmit}>
-        <div>
-          <select
-            value={this.state.usstate}
-            onChange={this.onChange}>
-            {options}
-          </select>
-        </div>
         <textarea
           value={this.state.desc}
           onChange={this.onTextAreaChange}/>
