@@ -1,4 +1,5 @@
 import React from 'react';
+import { helloWorld, helloWorldWithParameter } from "../actions/messageFormActions"
 
 export default class MessageForm extends React.Component {
 
@@ -22,6 +23,8 @@ export default class MessageForm extends React.Component {
     e.preventDefault();
     console.log("onSubmit");
     console.log(this.state);
+    helloWorld();
+    helloWorldWithParameter(this.state.desc);
   }
 
   onTextAreaChange(e){
