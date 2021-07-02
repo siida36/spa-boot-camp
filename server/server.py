@@ -19,6 +19,19 @@ def index():
 #     return "text parser:)"
 
 
+@app.route("/hoge", methods=["GET"])
+def get_hoge():
+    return make_response("hoge")
+
+
+@app.route("/fuga", methods=["GET", "POST"])
+def get_fuga():
+    data = request.get_json()
+    text = data["text"]
+    response = {"result": text + "@get_fuga()"}
+    return make_response(jsonify(response))
+
+
 @app.route("/wakati", methods=["GET", "POST"])
 def parse():
     # print(request.get_json()) # -> {'post_text': 'テストテストテスト'}
